@@ -13,6 +13,13 @@ def info():
         "version": "1.0.0",
         "author": "Іващук Святослав Андрійович"
     })
-
+@app.route('/api/health')
+def health():
+    return jsonify({
+        "healthy": True,
+        "uptime": "24h",
+        "service": "ShopEasy",
+        "checkedBy": "s.ivashchuk"
+    })
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
