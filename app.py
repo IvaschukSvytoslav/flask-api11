@@ -21,5 +21,13 @@ def health():
         "service": "ShopEasy",
         "checkedBy": "s.ivashchuk"
     })
+    @app.route('/api/ping')
+def ping():
+    return jsonify({
+        "pong": True,
+        "timestamp": datetime.utcnow().isoformat() + "Z",
+        "server": "ShopEasy",
+        "client": "s.ivashchuk"
+    })
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
